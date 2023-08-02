@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-image: url(https://images.unsplash.com/photo-1569701813229-33284b643e3c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8YW5pbWF0aW9uJTIwbW92aWV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.card {
+  background-color: #160101e8;
+  padding: 30px;
+  border-radius: 4%;
+  box-shadow: 3px 3px 1px 0px #00000060;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f44336;
+}
+.label-float input {
+  width: 100%;
+  padding: 5px 5px;
+  display: inline-block;
+  border: 0;
+  border-bottom: 1px solid #f9f9fa;
+  color: #f9f9fa;
+  background-color: transparent;
+  outline: transparent;
+  min-width: 180px;
+  font-size: 16px;
+  transition: all 0.3s ease-out;
+  border-radius: 0;
+}
+
+.label-float{
+  position: relative;
+  padding: 13px;
+  margin-top; 5%
+  margin-bottom:5%
+}
+
+label-float input:focus {
+  border-bottom: 2px solid #4038a0;
+}
+
+.label-float label {
+  color: #f44336;
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 13px;
+  
+}
+
+.label-float input:focus + label {
+  font-size: 13px;
+  margin-top: 0;
+  color: #fafafa;
+}
+
+button{
+  background-color:transparent;
+  border-color: #272262;
+  color:#272262;
+  padding: 7px;
+  
+  font-size: 12pt;
+  margin-top:20px;
+  border-radius:4px;
+  cursor:pointer;
+  outline: none;
+ 
+}
+
+button:hover{
+  background-color:#272262;
+  color:#fff;
+}
+
+.justify-center{
+  display: flex;
+  justify-content: center;
+}
+
+hr{
+  margin-top: 10px;
+  margin-bottom:10px;
+  width: 60%
+}
+
+p{
+  color: #272262;
+  font-size: 14px;
+  text-align: center;
+}
+
+a{
+  color:#7a3077;
+ 
+  text-decoration: transparent;
+  
+}
+
+a:hover{
+  color:#272262;
+}
+</style>
+<body>
+  <form method="POST">
+    {% csrf_token %}
+  <div class='container'>
+    <div class='card'>
+      <h1>Login</h1>
+  
+      <div class='label-float'>
+        <input type='text' id='usuario' name="E-mail" paceholder=''>
+        <label for='usuario'>E-mail</label>
+      </div>
+  
+      <div class='label-float'>
+        <input type='password' id='senha' name="Password" paceholder=''>
+        <label for='usuario'>Password</label>
+      </div>
+  
+      <div class='justify-center'>
+        <button href="{% url 'indexpage' %}">Enter</button>
+      </div>
+  
+      
+  
+      <p> don't have an account?
+        <a href="{% url 'registerpage' %}">Register</a>
+      </p>
+  
+    </div>
+  </div>
+  {% if messages %}
+  {% for msg in messages %}
+  <h1>{{msg}}</h1>
+  {% endfor %}
+  {% endif %}
+</body>
+</html>

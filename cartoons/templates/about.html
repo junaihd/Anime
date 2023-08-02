@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {box-sizing: border-box;}
+
+body {
+  margin: 0; 
+  font-family: font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  background-color: black;
+  color: #fff;
+}
+
+/*====== typography ======*/
+
+h1 {
+   font-weight: 700;
+   color: #fff;
+   font-size: 1.75rem;
+}
+
+h2 {
+   font-weight: 700;
+   color: #000;
+   font-size: 1.75rem;
+}
+
+.intro {
+  font-size: 1.15rem;
+  margin-bottom: 2.5em;
+}
+
+span {
+   color: #fda039;
+}
+
+.black {
+  font-weight: 700;
+  color: #000;
+}
+
+/*==== main-grid Layout ====*/
+
+.main-grid {
+    display: grid;
+    grid-template-columns: minmax(1em, 1fr) minmax(0px, 500px) minmax(1em, 1fr);
+    grid-column-gap: 2em;
+}
+
+/* ==== Layout ====*/
+
+.header {
+  background: #000;
+}
+
+.header-content{
+  display: flex;
+  flex-direction: row;
+  grid-column: 2 / -2;
+}
+
+.logo {
+  background: #fda039;
+  color: #000;
+  font-weight: 700;
+  padding: 1em .5em;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.25rem;
+}
+
+
+.current {
+  border-bottom: 1px solid #fda039;
+}
+
+main {
+  background-color: #fff;
+  color: #000;
+  grid-column: 2 /-2;
+}
+
+  .head {
+  grid-column: 2 / -2;
+  text-align: center;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.page-title {
+  color: #000;
+  font-size: 2.5rem;
+  justify-self: center;
+}
+
+.main-image {
+  grid-column: 2 / -2;
+  object-fit: cover;
+  max-width: 100%;
+  display: block;
+  box-shadow: 10px 10px 250px #000;
+}
+
+.main-text {
+  grid-column: 2 / -2;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  margin-top: 1em;
+  background: #fda039;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sub {
+  margin-top: 3em;
+}
+
+
+.footer > * {
+    grid-column: 2 / -2;
+}
+
+.footer {
+   background: #ebebeb;  
+   color: #000;
+}
+
+.social {
+  order: -1;
+  font-size: 1.75rem;
+  padding-top: 3em;
+  padding-bottom: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.icon {
+  color: #000;
+}
+.icon:hover,
+.icon:focus {
+  cursor: mouse;
+  color: #fda039;
+}
+
+.footer-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.end {
+  text-align: center;
+  margin-bottom: 0;
+}
+.copyright {
+  font-size: 1.1rem;
+  padding-top: 1em;
+  text-align: center;
+  font-weight: 700;
+}
+
+.footer-text,
+.copyright {
+  opacity: .4;
+  }
+ 
+
+  @media (min-width: 600px) {
+      .main-grid {
+        grid-template-columns: minmax(1em, 1fr) repeat(3, minmax(20px, 320px)) minmax(1em, 1fr);
+    }
+    
+    .open-nav,
+    .close-nav {
+      display: none;
+    }
+    
+    .navigation {
+      position: initial;
+    }
+    
+    .nav-list {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+    
+    .nav-link {
+      margin-left: 1em;
+      font-size: 1.7rem;
+    }
+    
+    .logo {
+      padding: .5em 1em;
+      text-align: center;
+    }
+    
+    .head {
+      grid-column: 3 / -3;
+    }
+    
+.page-title::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background: #fda039;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+}
+    
+    .main-image {
+      grid-column: 2;
+      margin-top: 1.3em;
+  
+    }
+    
+    .main-text {
+      grid-column: 3 / span 2;
+      margin-top: 0;
+    }
+    
+    .section-title::after {
+  margin-left: 0;
+}
+    
+    
+    
+    .footer {
+      padding-top: 2em;
+      padding-bottom: 2em;
+    }
+    
+    .footer-text {
+      grid-column: 2 / span 2;
+    }
+    
+    .social {
+      grid-column: span1;
+    }
+    
+    .icon {
+      margin: .5em;
+    }
+    
+    .footer-text {
+      width: 50vw;
+      margin-left: 0;
+      order: -1;
+    }
+    
+    .end,
+    .copyright {
+      text-align: start;
+    }
+  }
+
+@media(min-width: 700px) {
+  .page-title::after {
+    content: '';
+    display: block;
+    width: 160px;
+    height: 5px;
+    background: #fda039;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+}
+}
+}
+</style>
+<body>
+    <html>
+        <head>
+          <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+          
+          <script src="https://kit.fontawesome.com/8fe048c345.js" crossorigin="anonymous"></script>
+          <title>ANIME</title>
+        </head>
+        <body>
+          <main class="main-grid">
+                  <div class="head">
+                  <h1 class="page-title">About us</h1>
+                  <p class="subtitle">We provide the animation world for you.</p>
+                  </div>
+                  <img class="main-image" src="https://wp.scoopwhoop.com/wp-content/uploads/2016/05/571df535fb778552ed0d1122_892090775.png">
+                  
+                  <div class="main-text">
+                      <h2 class="section-title">Animation Movies</h2>
+                      <p>We all grew up watching animated movies. Be it Toy Story, Lion King or Rapunzel, all the characters have given us a fair dose of entertainment. As kids, we idolized them and jumped with joy at the prospect of new movies coming out. But what if I told you that animated movies aren’t just a source of entertainment but also impart a lot of wisdom. </p>
+                      <p>Over the years, animation has grown by leaps and bounds. They say, the things that can’t be achieved in real life can be imagined and portrayed via virtual media. These characters may not be real but they have managed to make us believe in our funny little story called ‘life’.</p>
+                    
+                      <h2 class="section-title sub">ANIME </h2>
+                      <p>The biggest use for animation is for entertainment. Animation is used on the TV, on your phones, and all over the internet. In television, animation is mostly used to occupy children, as is gives them something to laugh about and keep them entertained for long periods of time.</p>
+                      <p>we provide it for you</p>
+                  </div>
+            
+          </main>
+          
+          <footer class="footer main-grid">
+            <div class="footer-text">
+              <p class="end">Awesome, you visited our page. Please follow us on our social media accounts. They are linked on the right site. You can`t miss the icons.</p>
+              <p class="copyright">© Anime2023</p>
+            </div>
+            <div class="social">
+              <a href="#" class="facebook icon"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="twitter icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="instagram icon"><i class="fab fa-instagram"></i></a>
+            </div>
+          </footer>
+        </body>
+      </html> 
+</body>
+</html>
